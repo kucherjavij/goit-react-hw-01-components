@@ -17,7 +17,7 @@ const Profile = ({username, tag, location, avatar, stats}) => {return (
     <span>{stats.followers}</span>
   </li>
   <li>
-    <span>views </span>
+    <span>stats </span>
     <span>{stats.views}</span>
   </li>
   <li>
