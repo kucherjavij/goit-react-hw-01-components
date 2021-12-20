@@ -1,30 +1,42 @@
+import PropTypes from "prop-types";
+
+import {ProfileContainer,ImgContainer,Img,ProfileInfo,StatisticsList,StatisticsItems} from '../styled_components/Profile.styled'
+
 const Profile = ({username, tag, location, avatar, stats}) => {return (
-<div>
-<div>
-  <img
+<ProfileContainer>
+<ImgContainer>
+  <Img
     src={avatar}
     alt={username}
    
   />
-  <p>{username}</p>
-  <p>{tag}</p>
-  <p>{location}</p>
-</div>
+  <ProfileInfo>{username}</ProfileInfo>
+  <ProfileInfo>{tag}</ProfileInfo>
+  <ProfileInfo>{location}</ProfileInfo>
+</ImgContainer>
 
-<ul>
-  <li>
+<StatisticsList>
+  <StatisticsItems>
     <span>followers </span>
     <span>{stats.followers}</span>
-  </li>
-  <li>
+  </StatisticsItems>
+  <StatisticsItems>
     <span>stats </span>
     <span>{stats.views}</span>
-  </li>
-  <li>
+  </StatisticsItems>
+  <StatisticsItems>
     <span>likes </span>
     <span>{stats.likes}</span>
-  </li>
-</ul>
-</div>)}
+  </StatisticsItems>
+</StatisticsList>
+</ProfileContainer>)}
+
+Profile.propTypes={
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  avatar: PropTypes.string,
+  stats: PropTypes.object
+}
     
 export default Profile
